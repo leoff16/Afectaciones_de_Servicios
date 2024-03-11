@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
+    <title>Afectaciones de Servicio</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Afectaciones de Servicio</h1>
+        <div class="main-content">
+            <div class="service-panel" id="api-panel">
+                <h2>Validación de cuentas</h2>
+                <div class="additional-info">
+                    <p class="gmt-time" id="api-gmt-time"></p>
+                    <label for="api-country">Seleccionar País:</label>
+                    <select id="api-country">
+                        <option value="uruguay">Uruguay</option>
+                        <option value="peru">Peru</option>
+                        <option value="brasil">Brasil</option>
+                        <option value="mexico">Mexico</option>
+                        <!-- Agrega más opciones según tus necesidades -->
+                    </select>
+                    <label for="api-bank">Seleccionar Banco:</label>
+                    <select id="api-bank">
+                        <option value="santander">Santander</option>
+                        <option value="bbva">BBVA</option>
+                        <option value="itau">Itaú</option>
+                        <option value="brou">BROU</option>
+                        <option value="scotiabank">Scotiabank</option>
+                        <option value="bcp">BCP</option>
+                        <option value="interbank">Interbank</option>
+                        <!-- Agrega más opciones según tus necesidades -->
+                    </select>
+                    <button class="afectacion" onclick="sendData('api-country', 'api-bank', 'api-gmt-time', 'api-validacion', 'AFECTACION')">AFECTACION</button>
+                    <button class="resuelto" onclick="sendData('api-country', 'api-bank', 'api-gmt-time', 'api-validacion', 'RESUELTO')">RESUELTO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+</body>
+</html>
